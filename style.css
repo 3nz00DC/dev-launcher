@@ -1,0 +1,72 @@
+body {
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.watch-container {
+    padding: 10px;
+    background: #333;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.watch-face {
+    width: 300px;
+    height: 300px;
+    background-color: #000;
+    border-radius: 50%;
+    border: 4px solid #00a8ff;
+    position: relative;
+    overflow: hidden; /* Esconde o que estiver fora do círculo */
+}
+
+/* O trilho que segura as duas telas */
+.screens-wrapper {
+    display: flex;
+    width: 200%; /* Duas telas = 200% da largura */
+    height: 100%;
+    transition: transform 0.8s ease-in-out; /* A animação suave de 0.8s */
+}
+
+/* Cada tela ocupa metade do trilho (100% do visor) */
+.screen {
+    width: 50%; 
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* A classe que o JavaScript vai adicionar para empurrar a tela */
+.slide-left {
+    transform: translateX(-50%);
+}
+
+.terminal-text {
+    color: #00a8ff;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+.prompt { color: #00a8ff; }
+
+.key {
+    color: #00a8ff;
+    display: inline-block;
+    width: 70px;
+    text-align: right;
+    margin-right: 5px;
+}
+
+.value { color: #00a8ff; }
+.battery-bar { color: #f1c40f; }
+.step-bar { color: #2ecc71; }
+
+.cursor { animation: blink 1s step-end infinite; }
+@keyframes blink { 50% { opacity: 0; } }
