@@ -1,0 +1,21 @@
+{
+  "name": "Visor de Programação - Terminal",
+  "short_name": "Dev Terminal",
+  "description": "Um visor de programação com interface de terminal para celular.",
+  "start_url": "/dev-launcher/index.html",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#00a8ff",
+  "icons": [
+    {
+      "src": "/dev-launcher/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/dev-launcher/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

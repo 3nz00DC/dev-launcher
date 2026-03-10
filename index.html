@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visor de Programação - Terminal</title>
+    <link rel="manifest" href="/dev-launcher/manifest.json">
+    <meta name="theme-color" content="#00a8ff">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -35,5 +37,22 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <script>
+      if (
+        "serviceWorker" in navigator &&
+        window.location.protocol === "https:"
+      ) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/dev-launcher/service-worker.js")
+            .then((reg) => {
+              console.log("Service worker registered.", reg);
+            })
+            .catch((err) => {
+              console.error("Service worker registration failed:", err);
+            });
+        });
+      }
+    </script>
 </body>
 </html>
