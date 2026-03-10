@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor de Programação - Terminal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="watch-container">
+        <div class="watch-face">
+            <div class="screens-wrapper" id="slider">
+                
+                <div class="screen">
+                    <div class="terminal-text">
+                        <span class="prompt">user@watch: ~$</span> ./time <br><br>
+                        <span class="key">Time:</span> <span id="time" class="value">00:00:00</span> <br>
+                        <span class="key">Date:</span> <span id="date" class="value">---</span> <br>
+                        <span class="key">Battery:</span> <span class="battery-bar">[########  ]</span> <span class="value">80%</span> <br><br>
+                        <span class="prompt">user@watch: ~$</span> <span class="cursor">_</span>
+                    </div>
+                </div>
+
+                <div class="screen">
+                    <div class="terminal-text">
+                        <span class="prompt">user@watch: ~$</span> ./health <br><br>
+                        <span class="key">Steps:</span> <span class="step-bar">[######    ]</span> <span class="value">8.432</span> <br>
+                        <span class="key">Active:</span> <span class="value">4h 20m</span> <br>
+                        <span class="key">Heart:</span> <span id="heart" class="value">72 bpm</span> <br><br>
+                        <span class="prompt">user@watch: ~$</span> <span class="cursor">_</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
