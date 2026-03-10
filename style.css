@@ -22,29 +22,41 @@ body {
     border-radius: 50%;
     border: 4px solid #00a8ff;
     position: relative;
-    overflow: hidden; /* Esconde o que estiver fora do círculo */
+    overflow: hidden;
+    /* Efeito neon azul (glow) */
+    box-shadow: 
+        0 0 10px #00a8ff,
+        0 0 20px #00a8ff,
+        0 0 30px #00a8ff,
+        0 0 40px #0080cc,
+        inset 0 0 10px rgba(0, 168, 255, 0.2);
 }
 
-/* O trilho que segura as duas telas */
+/* O trilho que segura as três telas */
 .screens-wrapper {
     display: flex;
-    width: 200%; /* Duas telas = 200% da largura */
+    width: 300%; /* Três telas = 300% da largura */
     height: 100%;
     transition: transform 0.8s ease-in-out; /* A animação suave de 0.8s */
 }
 
-/* Cada tela ocupa metade do trilho (100% do visor) */
+/* Cada tela ocupa um terço do trilho (100% do visor) */
 .screen {
-    width: 50%; 
+    width: calc(100% / 3);
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 }
 
-/* A classe que o JavaScript vai adicionar para empurrar a tela */
-.slide-left {
-    transform: translateX(-50%);
+/* Classes para deslizar entre as telas */
+.slide-left-1 {
+    transform: translateX(-33.333%);
+}
+
+.slide-left-2 {
+    transform: translateX(-66.666%);
 }
 
 .terminal-text {
@@ -52,6 +64,7 @@ body {
     font-size: 14px;
     line-height: 1.5;
     white-space: nowrap;
+    padding: 10px;
 }
 
 .prompt { color: #00a8ff; }
@@ -70,3 +83,48 @@ body {
 
 .cursor { animation: blink 1s step-end infinite; }
 @keyframes blink { 50% { opacity: 0; } }
+
+/* Estilos para o formato JSON */
+.json-container {
+    color: #00a8ff;
+    font-size: 12px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-all;
+    padding: 15px;
+    max-width: 280px;
+    max-height: 280px;
+    overflow-y: auto;
+    text-align: left;
+}
+
+.json-key {
+    color: #f1c40f;
+}
+
+.json-value {
+    color: #2ecc71;
+}
+
+.json-bracket {
+    color: #00a8ff;
+}
+
+/* Scrollbar customizada para o JSON */
+.json-container::-webkit-scrollbar {
+    width: 4px;
+}
+
+.json-container::-webkit-scrollbar-track {
+    background: rgba(0, 168, 255, 0.1);
+    border-radius: 2px;
+}
+
+.json-container::-webkit-scrollbar-thumb {
+    background: #00a8ff;
+    border-radius: 2px;
+}
+
+.json-container::-webkit-scrollbar-thumb:hover {
+    background: #0080cc;
+}
